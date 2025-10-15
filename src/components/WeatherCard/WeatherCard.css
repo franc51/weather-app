@@ -1,0 +1,25 @@
+.weather_card_container {
+  width: 16rem;
+  height: 21rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.search_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.search_box button {
+  width: 6rem;
+}
+.weather_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.863);
+}
