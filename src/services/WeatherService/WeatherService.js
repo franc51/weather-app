@@ -1,17 +1,20 @@
 // get weather by geographic coordinates - helper function
 export async function getWeatherByCoords(latitude, longitude) {
   const weatherRes = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m,weather_code`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation,cloudcover`
   );
   const weatherData = await weatherRes.json();
-
-  const current = weatherData.current;
+  const currentWeather = weatherData.current_weather;
+  // get the index of the current hour in the hourly arrays
+  const currentHourIndex = weatherData.hourly.time.indexOf(currentWeather.time);
   return {
     latitude,
     longitude,
-    temperature: current.temperature_2m,
-    wind: current.wind_speed_10m,
-    code: current.weather_code,
+    temperature: currentWeather.temperature,
+    wind: currentWeather.windspeed,
+    code: currentWeather.weathercode,
+    rain: weatherData.hourly.precipitation[currentHourIndex],
+    cloud: weatherData.hourly.cloudcover[currentHourIndex],
   };
 }
 
