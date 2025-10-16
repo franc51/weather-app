@@ -11,3 +11,5 @@ Project overview and workflow:
  The user can then search for another location using the search box.
 For every kind of weather, the temperature and the corresponding icon is displayed.
 I've made use of Open-Meteo free weather API to get all the weather details, using the API documentation.
+
+https://franc51.github.io/weather-app/
