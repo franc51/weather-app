@@ -1,3 +1,5 @@
+https://weather-app-dun-six-17.vercel.app/
+
 Weady is a React app created with the purpose of deepening my client-server architecture and design patterns knowledge.
 
 Structure of the project:
@@ -12,4 +14,4 @@ Project overview and workflow:
 For every kind of weather, the temperature and the corresponding icon is displayed.
 I've made use of Open-Meteo free weather API to get all the weather details, using the API documentation.
 
-https://franc51.github.io/weather-app/
+
